@@ -60,11 +60,42 @@
 #print('fuera while')
 
 # EJEMPLO continue
-contador = 1
-while contador <= 10:
-    if contador % 2 == 0:
-        print(contador, 'es un numero par')
-        continue
-    print('y ahora incremento el contador')
-    contador += 1
-print('fuera while')
+#contador = 1
+#while contador <= 10:
+#    if contador % 2 == 0:
+#        print(contador, 'es un numero par')
+#        continue
+#    print('y ahora incremento el contador')
+#    contador += 1
+#print('fuera while')
+
+#BUCLE FOR
+
+#lista = [1,2,3,'a',5]
+#tupla = (1,2,3,'c','d')
+#for valorActual in tupla:
+#    print(valorActual)
+
+#longitud = len(lista)
+#print(longitud)
+
+#for numero in range(len(lista)):
+#    print(lista[numero])
+
+lista = ['hola','mensaje','adios']
+#for palabra in lista:
+#    print('palabra actual: ',palabra)
+#    if palabra == 'mensaje':
+#        print('he encontrado la palabra mensaje')
+#        break
+
+#OTRA FORMA con IN 
+
+#if 'mensaje' in lista:
+#    print('éncontre palabra mensaje')
+
+#forma con NOT IN
+
+if 'mensaje' not in lista:
+    print('éncontre palabra mensaje')
+
