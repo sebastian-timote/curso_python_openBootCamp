@@ -48,10 +48,38 @@
 #suma(c = 7,b=7,a=7)
 #suma(c=7)
 
+#PARAMETROS VARIABLES EN UNA FUNCION
 
+#def suma(*args):
+#    resultado = 0
+#    for arg in args:
+#        resultado += arg
+#    print(resultado)
+#suma(5,5,5,5,5,5,5,5,5,5)
+#suma(2,2)
 
+#PARAMETROS CON NOMBRES(NAMED PARAMETERS) EN UNA FUNCION
 
+#def suma(**kwargs):
+#    print(kwargs)
+#suma(vivienda= 'dos pisos', coche='ferrari')
 
+#EJEMPLO RECORRIENDO UN DICCIONARIO EN UNA FUNCION CON PARAMETROS VARIABLES
+#def suma(**kwargs):
+#    for key, value in kwargs.items():
+#        print(key, '=', value)
+#suma(vivienda= 'dos pisos', coche='ferrari')
+
+#def suma(**kwargs):
+#    if kwargs['coche'] == 'bonito':
+#        print('tu coche es bonito')
+#suma(vivienda= '2 pisos', coche='bonito')
+
+# otro ejemplo verificando que ecista coche para que no casque
+def suma(**kwargs):
+    if 'coche' in kwargs and kwargs['coche'] == 'bonito':
+        print('tu coche es bonito')
+suma()
 
 
 
