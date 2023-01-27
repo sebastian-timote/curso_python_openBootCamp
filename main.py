@@ -76,10 +76,41 @@
 #suma(vivienda= '2 pisos', coche='bonito')
 
 # otro ejemplo verificando que ecista coche para que no casque
-def suma(**kwargs):
-    if 'coche' in kwargs and kwargs['coche'] == 'bonito':
-        print('tu coche es bonito')
-suma()
+#def suma(**kwargs):
+#    if 'coche' in kwargs and kwargs['coche'] == 'bonito':
+#        print('tu coche es bonito')
+#suma(vivienda= '2 pisos', coche='feo')
+
+#RETURN
+
+#def operaciones(a, b):
+#    return a + b, a - b, a * b, a / b
+#suma, resta, multi, divi = operaciones(4, 2)
+#print(suma)
+#print(resta)
+#print(multi)
+#print(divi)
+#en este caso cada valor de return se guarda en una variable dif
+#pero para que funcione si el return devuelve 4 valores las variables tambien tienen que ser 4 sino falla
+
+def sumador(**kwargs):
+    #operadores ternarios
+    inicial = kwargs['inicial'] if 'inicial' in kwargs else 0
+    final = kwargs['final'] if 'final' in kwargs else inicial + 5
+    resultado = 0
+
+    for x in range(inicial,final + 1):
+        resultado += x
+    return resultado
+
+print(sumador(final=30))
+#en este ejemplo se usa operador ternario de python
+# FUNCION ANONIMA LANDA
+
+
+
+
+
 
 
 
