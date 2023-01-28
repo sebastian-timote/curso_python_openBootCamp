@@ -93,23 +93,32 @@
 #en este caso cada valor de return se guarda en una variable dif
 #pero para que funcione si el return devuelve 4 valores las variables tambien tienen que ser 4 sino falla
 
-def sumador(**kwargs):
+#def sumador(**kwargs):
     #operadores ternarios
-    inicial = kwargs['inicial'] if 'inicial' in kwargs else 0
-    final = kwargs['final'] if 'final' in kwargs else inicial + 5
-    resultado = 0
+#    inicial = kwargs['inicial'] if 'inicial' in kwargs else 0
+#    final = kwargs['final'] if 'final' in kwargs else inicial + 5
+#    resultado = 0
 
-    for x in range(inicial,final + 1):
-        resultado += x
-    return resultado
+#    for x in range(inicial,final + 1):
+#        resultado += x
+#    return resultado
 
-print(sumador(final=30))
+#print(sumador(final=30))
 #en este ejemplo se usa operador ternario de python
 # FUNCION ANONIMA LANDA
+# se asignan a variables y se usa la palabra lambda
 
+#anonima = lambda: print('hola')
+#anonima()
 
+#anonima = lambda nombre: print('hola', nombre)
+#anonima('sebas')
 
-
+#anonima = lambda nombre, nombre2: print('hola', nombre, 'adios',nombre2)
+#anonima('sebas', 'juan')
+#las lambdas se usan para cosas simples
+sumatoria = lambda x: x+x
+print(sumatoria(2))
 
 
 
