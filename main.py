@@ -121,23 +121,63 @@
 #vas a utilizar la instancia de la clase el destructor ya la ha destruido :)
 # aca un ejemplo 
 
-class Dino:
-    color = None
-    nombre = None
-    def __init__(self,nombre):
-        self.color = 'verde'
-        self.nombre = nombre
-        print('hola')
-    def verEscamas(self):
-        print('escamas')
-    def __del__(self):
-        print('estoy en el destructor dela clase ', self.__class__)
+#class Dino:
+#    color = None
+#    nombre = None
+#    def __init__(self,nombre):
+#        self.color = 'verde'
+#        self.nombre = nombre
+#        print('hola')
+#    def verEscamas(self):
+#        print('escamas')
+#    def __del__(self):
+#        print('estoy en el destructor dela clase ', self.__class__)
 
-p = Dino('sebas')
-print(p.color,p.nombre)
-print('el destructor se ejecuta')
+#p = Dino('sebas')
+#print(p.color,p.nombre)
+#print('el destructor se ejecuta')
 #del(p)
-print('despues de terminado el programa')
-p.verEscamas()# si descomentamos la linea 139 esta linea falla por que esta destruida la instancia de la clase
+#print('despues de terminado el programa')
+#p.verEscamas()# si descomentamos la linea 139 esta linea falla por que esta destruida la instancia de la clase
 
+#TODO CONSTRUCTOR DEL PADRE
+#cuando uno instancia una clase se ejecuta el constructor de esa misma clase
+# no se ejecuta el constructor de la clase padre
+#pero como hago para ejecutar tambien el constructor del padre
+#forma 1 con Juguete.__init__(self)
+#forma 2 con super().__init__()
+#class Juguete:
+#    _encendido = True
+#    def __init__(self):
+#        print('Estoy en la clase juguete, en su constructor')
+#    def apaga(self):
+#        self._encendido = False
+#    def enciende(self):
+#        self._encendido = True
+#    def isEncendido(self):
+#        return self._encendido
 
+#class Potato(Juguete):
+#    def __init__(self, nombre):
+        #Juguete.__init__(self)
+        #super().__init__()
+#        print('Estoy en la clase Potato, en su constructor', nombre)
+#    def quitarOreja(self):
+#        pass
+#    def ponerOreja(self):
+#        pass  
+
+#p = Potato('sebas')
+
+#TODO ejemplo con diccionarios
+#en python las clases son diccionarios
+#solo que la sintaxis de las clases es mas facil
+#es muy raro usarlo de esta forma
+def enciende(nombre):
+    print('invoco enciende', nombre)
+
+diccionario = {
+    'enciende' : enciende,
+}
+
+diccionario['enciende']('aaaa')
