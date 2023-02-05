@@ -1,183 +1,70 @@
-#POO
-#TODO ejemplo clases dinamicas
-#class Dino:
-#    _encendido = True
-#    def apaga(self):
-#        self._encendido = False
-#    def enciende(self):
-#        self._encendido = True
-#    def isEncendido(self):
-#        return self._encendido
+#from abc import ABC, abstractmethod
 
-#la instancia d es un espacio de memoria diferente a d2
-#por eso tienen resultados diferentes
-#d = Dino()
-#d.apaga()
-#print(d.isEncendido())
-
-#d2 = Dino()
-#d2.enciende()
-#print(d2.isEncendido())
-# por convencion de programadores no deberiamos modificar un metodo o variable cuando tenga guion abajo antes
-#self-> podemos modificar el valor de una variable de la clase(global) ya que si no lo ponemos creamos una nueva variable con el mismo nombre del ambito del metodo
-
-#TODO ejemplo clases estaticas
-#una clase estatica no se le pueden crear diferentes instancias
-# solo toma un espacio de memoria 
-# en una clase dinamica cada instancia toma su espacio de memoria
-#class Estatica:
-#    numero = 1
-#    def incrementa():
-#        Estatica.numero += 1
-#Estatica.incrementa()
-#Estatica.incrementa()
-#Estatica.incrementa()
-#print(Estatica.numero)
-#Estatica.incrementa()
-#print(Estatica.numero)
-
-#TODO ejemplo herencia
-#class Juguete:
-#    _encendido = True
-#    def apaga(self):
-#        self._encendido = False
-#    def enciende(self):
-#        self._encendido = True
-#    def isEncendido(self):
-#        return self._encendido
-
-#class Potato(Juguete):
-#    def quitarOreja(self):
-#        pass
-#    def ponerOreja(self):
-#        pass   
-
-#class Dino(Juguete):
-#    def verEscamas(self):
+#class Animal(ABC):
+#    @abstractmethod
+#    def sonido(self):
 #        pass
 
-#p = Dino()
-#p.enciende()
-#print(p.isEncendido())
-
-#TODO constructor en una clase
-#class Juguete:
-#    _encendido = True
-#    def apaga(self):
-#        self._encendido = False
-#    def enciende(self):
-#        self._encendido = True
-#    def isEncendido(self):
-#        return self._encendido
-
-#class Potato(Juguete):
-#    def quitarOreja(self):
-#        pass
-#    def ponerOreja(self):
-#        pass   
-
-#class Dino(Juguete):
-#    def __init__(self,nombre):
-#        print('hola',nombre)
-#    def verEscamas(self):
-#        pass
-
-#p = Dino()
-#print(dir(p))
-#p.enciende()
-#print(p.isEncendido())
-
-#TODO CONTRUCTOR EN CLASES
-
-#class Dino:
-#    def __init__(self,nombre):
-#        print('hola',nombre)
-#    def verEscamas(self):
-#        pass
-
-#p = Dino('sebas')
-
-#TODO DESTRUCTOR EN CLASES
-
-#class Dino:
-#    color = None
-#    nombre = None
-#    def __init__(self,nombre):
-#        self.color = 'verde'
-#        self.nombre = nombre
+#    def diHola(self):
 #        print('hola')
-#    def verEscamas(self):
-#        pass
-#    def __del__(self):
-#        print('estoy en el destructor dela clase ', self.__class__)
 
-#p = Dino('sebas')
-#print(p.color,p.nombre)
-#print('el destructor se ejecuta')
-#print('despues de terminado el programa')
+#class Perro(Animal):
+#    def sonido(self):
+#        print('guau')
 
-#TODO DESTRUCTOR EN CLASES
-#se puede forzar la ejecucion con del(clase) pero si luego de ello
-#vas a utilizar la instancia de la clase el destructor ya la ha destruido :)
-# aca un ejemplo 
+#class Gato(Animal):
+#    def sonido(self):
+#        print('miau')
 
-#class Dino:
-#    color = None
-#    nombre = None
-#    def __init__(self,nombre):
-#        self.color = 'verde'
-#        self.nombre = nombre
-#        print('hola')
-#    def verEscamas(self):
-#        print('escamas')
-#    def __del__(self):
-#        print('estoy en el destructor dela clase ', self.__class__)
 
-#p = Dino('sebas')
-#print(p.color,p.nombre)
-#print('el destructor se ejecuta')
-#del(p)
-#print('despues de terminado el programa')
-#p.verEscamas()# si descomentamos la linea 139 esta linea falla por que esta destruida la instancia de la clase
+#p = Perro()
+#p.sonido()
+#p.diHola()
+#g = Gato()
+#g.sonido()
 
-#TODO CONSTRUCTOR DEL PADRE
-#cuando uno instancia una clase se ejecuta el constructor de esa misma clase
-# no se ejecuta el constructor de la clase padre
-#pero como hago para ejecutar tambien el constructor del padre
-#forma 1 con Juguete.__init__(self)
-#forma 2 con super().__init__()
-#class Juguete:
-#    _encendido = True
-#    def __init__(self):
-#        print('Estoy en la clase juguete, en su constructor')
-#    def apaga(self):
-#        self._encendido = False
-#    def enciende(self):
-#        self._encendido = True
-#    def isEncendido(self):
-#        return self._encendido
+#TODO COMPOSICION UNA CLASE COMPUESTA DE OTRAS CLASES
 
-#class Potato(Juguete):
-#    def __init__(self, nombre):
-        #Juguete.__init__(self)
-        #super().__init__()
-#        print('Estoy en la clase Potato, en su constructor', nombre)
-#    def quitarOreja(self):
-#        pass
-#    def ponerOreja(self):
-#        pass  
+#class Motor:
+#    tipo = 'diesel'
+    
+#class Ventanas:
+#    cantidad = 5
 
-#p = Potato('sebas')
+#    def cambiarCantidad(self,valor):
+#        self.cantidad = valor
+    
+#class Ruedas:
+#    cantidad = 4
 
-#TODO ejemplo con diccionarios
-#en python las clases son diccionarios
-#solo que la sintaxis de las clases es mas facil
-#es muy raro usarlo de esta forma
-def enciende(nombre):
-    print('invoco enciende', nombre)
+#class Carroceria:
+#    ventanas = Ventanas()
+#    ruedas = Ruedas()
 
-diccionario = {
-    'enciende' : enciende,
-}
+#class Coche:
+#    motor = Motor()
+#    carroceria = Carroceria()
 
-diccionario['enciende']('aaaa')
+
+#c = Coche()
+#print('motor es', c.motor.tipo )
+#print('numero de ventanas es ', c.carroceria.ventanas.cantidad )
+#c.carroceria.ventanas.cambiarCantidad(6)
+#print('numero de ventanas es ', c.carroceria.ventanas.cantidad )
+
+#TODO otro ejemplo de COMPOSICION 
+
+
+class Categorias:
+    IdCategoria = 0
+    Nombre = ''
+class Proveedores:
+    IdProveedor = 0
+    Nombre = ''
+class Productos:
+    IdProducto = 0
+    CategoriaProducto = Categorias()
+    Precio = 0
+    Tamaño = 0
+    TipoDeproducto = 0
+    CIFProveedor = Proveedores()
