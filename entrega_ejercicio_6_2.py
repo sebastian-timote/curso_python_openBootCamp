@@ -1,11 +1,13 @@
 class Alumno:
     nombre = ''
     nota = 0.0
-
-    def setNombreAlumno(self, nombre):
+    def __init__(self,nombre,nota):
         self.nombre = nombre
-    def setNotaFinalAlumno(self, nota):
         self.nota = nota
+    def imprimirDataAlumno(self):
+        print('nombre:',self.nombre)
+        print('nota:',self.nota)
+
     def isAprovado(self):
         if (self.nota and self.nombre):
             if (self.nota >= 3.0 and self.nota <= 5.0):
@@ -18,7 +20,6 @@ class Alumno:
         else:
             print('no se ha actualizado la nota o el nombre del alumno')
     
-n = Alumno()
-n.setNombreAlumno('sebas')
-n.setNotaFinalAlumno(5.0)
+n = Alumno('',2)
+n.imprimirDataAlumno()
 n.isAprovado()
