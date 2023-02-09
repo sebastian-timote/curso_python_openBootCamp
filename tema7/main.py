@@ -1,22 +1,14 @@
-import operaciones as op
+
+#sys.path es una variable que almacena rutas de modulos
 import sys
+#en esta linea agregamos una nueva ruta ala variable path para que
+# busque alli modulos que vamos a crear en este caso el modulo saluda.py
+sys.path.append('/home/unfulanoubuntu/archivos_test/python/mismodulos')
 import pprint
-#importo del archivo operaciones
+pprint.pprint(sys.path)
+import saluda
 def main():
-    #res = op.suma(2,2)
-    #resResta = op.resta(5,3)
-    #print('hola en main()', res, resResta)
-    #print(op.mostrarVar())
-
-    #TODO INSTANCIANDO CLASE EN MODULO
-    #oper = op.Operador()
-    #print(oper.multiplicacion(3,5))
-
-    #TODO EJEMPLO VARIABLES
-    #print(op.PI)
-
-    #TODO importando modulo math
-    pprint.pprint(sys.path)
+    saluda.saluda('sebas')
 
 if __name__ == '__main__':
     main()
