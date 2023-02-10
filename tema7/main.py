@@ -13,7 +13,9 @@
 #from operaciones2 import restador,sumador
 
 #forma 4 import de paquetes pero necesita config en archivo __init__
-from operaciones2 import *
+#from operaciones2 import *
+import operaciones2.restador.resta
+import pprint
 
 def main():
     #TODO EJEMPLO 1 PAQUETES
@@ -31,9 +33,9 @@ def main():
     #print(sumador.suma(2,2))
     #print(restador.resta(2,2))
     # forma 4
-    print(restador.resta.resta(2,2))
-
-
+    #print(restador.resta.resta(2,2))
+    #TODO VER FUNCIONES O METODOS DE UN OBJETO INT STRING ETC
+    pprint.pprint(dir(1))
 
 
 if __name__ == '__main__':
