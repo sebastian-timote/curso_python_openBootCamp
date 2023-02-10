@@ -1,12 +1,17 @@
-# team ambitos
-
-import operaciones2.sumador.suma as s
+# tema ambitos
 import pprint
+variable= 5
+print(variable)
+#cambiando el valor de la variable usando el dicc. globals
+globals()['variable'] = 6
+print(variable)
 
-def test():
-    print('hola')
+def prueba():
+    valor =5
+    estado = False
+    pprint.pprint(locals())
 
-numero = 4
-obj = s.suma(2,2)
-#podemos ver todos las variables y funciones en el ambito global
-pprint.pprint(globals())
+prueba()
+
+
+
