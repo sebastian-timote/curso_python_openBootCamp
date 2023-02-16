@@ -36,22 +36,50 @@
 
 # TODO otro ejemplo de str() y repr()
 
-class Juguete:
-    nombre = ""
-    precio = 0.0
-    def __init__(self, nombre , precio):
-        self.nombre = nombre
-        self.precio = precio
+#class Juguete:
+#    nombre = ""
+#    precio = 0.0
+#    def __init__(self, nombre , precio):
+#        self.nombre = nombre
+#        self.precio = precio
     
-    def __str__(self):
-        return f'Mi nombre es {self.nombre} y mi precio {self.precio}' 
+#    def __str__(self):
+#        return f'Mi nombre es {self.nombre} y mi precio {self.precio}' 
 
     
-j1 = Juguete("potato",200)
-j2 = Juguete("dino",3.4)
+#j1 = Juguete("potato",200)
+#j2 = Juguete("dino",3.4)
 
-print(j1)
-print(repr(j2))
+#print(j1)
+#print(repr(j2))
+
+# TODO EJEMPLO para ver todos los metodos de una cadena
+#import pprint
+#pprint.pprint(dir(''))
+# TODO metodos de una cadena
+#cadena = "      en un lugar de la manchA          "
+#print(cadena.title())# coloca las letras iniciales de cada palabra en mayus
+#print(cadena.capitalize())# coloca la primera letra en mayus
+#print(cadena.lower().count('a'))#pasar a minus y cuantas veces se repite una letra
+#print(cadena.strip())#quita los espacios iniciales
+#print(cadena.lstrip())#quita los espacios a la izquierda
+#print(cadena.rstrip())#quita los espacios a la derecha
+cadena2 = 'hola otravez mama bitch'
+print(cadena2.split(' '))
+print(cadena2.startswith('ho'))
+print(cadena2.endswith('ch'))
+
+
+#isdigit solo funciona con cadenas con int casca
+#numero = '5'
+#print(numero.isdigit())# comprueba si es string
+#numero = 'a'
+#print(numero.isalnum()) # comprueba si es alfanumerico
+#print(numero.isalpha()) # comprueba si es letras
+
+
+
+
 
         
         
