@@ -28,19 +28,26 @@
 #f.close()
 
 #TODO OTRO EJEMPLO DE LECTURA DE FICHEROS
-
+#busca en una archivo del sistema lo recorre y agrega en una lista los user
+# y lo simprime en la terminal
 def main():
     usuarios = listarUsuario()
-    #print(usuarios)
+    print(usuarios)
+    for user in usuarios:
+        print(f'Usuario: {user}')
 def listarUsuario():
     f = open('/../../../etc/passwd', 'r')
     datos = f.readlines()
     f.close()
-
+    resultado = []
     for linea in datos:
-        if linea[0] == '/usr/':
+        if ((linea.startswith('sys') == True) or (linea[0] == '_')):
             continue
-        print(linea)
+        partes = linea.split(':')
+        resultado.append(partes[0])
+    return resultado
+
+
     
 if __name__ == '__main__':
     main()
