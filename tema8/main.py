@@ -1,26 +1,33 @@
-# escritura de ficheros
-# a -> agrega nuevo texto al final
-# w -> escribe en el archivo especificado borrando lo antiguo que contenga
-#f = open('mifichero.txt','w')
-#f.write('datos\n')
-#f.write('datos2\n')
-#f.close()
+#guardar los datos de una instancia o objeto
+import pickle
+class Juguete:
+    nombre = ''
+    precio = 0.0
+    def __init__(self, nombre,precio):
+        self.nombre = nombre
+        self.precio = precio
+    def getNombre(self):
+        return self.nombre
+        
+j1 = Juguete('potato',2.2)
 
-#TODO escribir lineas
-def escribe(archivo,data):
-    f = open(archivo,'w')
-    for lineas in data:
-        if not lineas.endswith('\n'):
-            lineas = lineas + '\n'
-        f. write(lineas)
+#serializar -> convertir la representacion de un programa en una secuencia de datos que podamos escribir en un fichero
+def serializacion(archivo,data):
+    f = open(archivo,'wb')
+    pickle.dump(data, f)#serializacion
     f.close()
+#serializacion('datos.bin',j1)
 
-lista = [
-    'una linea',
-    'dos lineas',
-    'tres lineas'
-]
-escribe('mifichero.txt', lista)
+def deserializacion(archivo):
+    f = open(archivo,'rb')
+    potato = pickle.load(f)#serializacion
+    f.close()
+    return potato
+    
+papa = deserializacion('datos.bin')
+print(type(papa))
+print(papa.getNombre(), 'precio: ', papa.precio)
+
 
 
 
