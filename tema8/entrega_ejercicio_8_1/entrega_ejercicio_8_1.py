@@ -1,3 +1,5 @@
+#crear un archivo py donde creeis un archivo txt, lo abras u escribais dentro del archivo. 
+#para ello tendreis que acceder dos veces al archivo creado
 def main():
     def crearArchivo(nombreArchivo):
         file = open(f'tema8/entrega_ejercicio_8_1/{nombreArchivo}','xt')

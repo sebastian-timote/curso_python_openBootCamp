@@ -1,3 +1,5 @@
+# crear archivo py y dentro creereis una clase vehiculo, hareis un objeto de ella,
+#lo guardareis en un archivo y luego lo cargamos
 import pickle
 class Vehiculo:
     autopartsChange = ''
