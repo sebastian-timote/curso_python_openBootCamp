@@ -130,7 +130,7 @@
 #user  = input('username: ')
 #passwd  = getpass('password: ')
 #print(user, passwd)
-
+#TODO EJEMPLO INPUT
 secreto = 50
 valor = 0
 while valor != secreto:
