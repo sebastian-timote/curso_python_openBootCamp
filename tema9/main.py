@@ -106,4 +106,49 @@
 #print(round(b))
 #print(round(c))
 
+# TODO MIN()
+# ME DEVUELVE EL VALOR MINIMO DE UNA LISTA
+#print(min(2,3,4,5,6,4,1))
+
+# TODO pow()
+# elevar un numero ala potencia
+#print(pow(2,4))
+#print(2**4)
+
+# TODO sorted()
+#ordenar unalista
+
+#lista = ['z','c','d','a']
+#ordenada = sorted(lista, reverse=True, key=lambda x: str(x).startswith('a'))
+#print(ordenada)
+
+# TODO funcion input()
+# permite preguntar al usuario por un dato
+# TODO FUNCION GETPASS
+# OBTIENE UNA CONTRASEÑA Y EN CONSOLA NO APARECEN LOS DIGITOS INTRODUCIDOS POR SEGURIDAD
+#from getpass import getpass
+#user  = input('username: ')
+#passwd  = getpass('password: ')
+#print(user, passwd)
+
+secreto = 50
+valor = 0
+while valor != secreto:
+    valor = int(input('introduce un numero: '))
+    if valor > secreto:
+        print('valor muy alto')
+        continue
+    if valor < secreto:
+        print('valor muy bajo')
+        continue
+    print('acertaste')
+
+
+
+
+
+
+
+
+
 
