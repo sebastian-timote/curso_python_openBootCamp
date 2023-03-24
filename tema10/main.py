@@ -1,6 +1,7 @@
 
 import sys
 import tkinter
+
 window = tkinter.Tk()
 from tkinter import ttk
 ##TODO FRAME --> AGRUPACION DE COSAS, PARECE UN DIV
@@ -42,8 +43,50 @@ from tkinter import ttk
 #rs1 = ttk.Radiobutton(window, text="Si", value='12', variable=seleccionado2)
 #rs1.grid(column=1,row=0, padx=5,pady=5)
 
-#TODO EVENTOS ->son reacciones a una accion exterior como el teclado, mouse, etc
+##TODO EVENTOS ->son reacciones a una accion exterior como el teclado, mouse, etc
+## <Button-1> -> evento de click izquierdo
+## <Double-1> -> evento de doble click
+## <Motion> -> evento cuadno el mouse pasa sobre èl
+##TODO EJEMPLO 1 DE EVENTOS
+#def saludar(event):
+#    print('han hecho click en saludar')
+#def saludarDoubleClick(event):
+#    print('han hecho doble click en saludar')
 
+#def salir(event):
+#    print('adios')
+#    window.quit()
+
+#boton = tkinter.Button(window, text='Haz click')
+#boton.pack()
+#boton.bind('<Button-1>',saludar)#unir un evento a una accion
+#boton.bind('<Double-1>',saludarDoubleClick)#evento de doble click
+
+#botonSalir = tkinter.Button(window, text='Salir')
+#botonSalir.pack()
+#botonSalir.bind('<Button-1>',salir)#unir un evento a una accion
+##TODO FIN EJEMPLO 1 DE EVENTOS
+
+## TODO EJEMPLO2 EVENTOS
+#def motion(event):
+#    print('mouse position: (%s %s)' % (event.x, event.y))
+#    return
+
+#texto= "demo de texto en un widget msg para ver el movimiento del mouse"
+#msg = tkinter.Message(window, text= texto)
+#msg.config(bg='lightgreen', font=('times', 24, 'italic'))
+#msg.bind('<Motion>', motion)
+#msg.pack()
+## TODO fin ejemplo 2 eventos
+
+##TODO otros tipos de ventanas
+from tkinter import filedialog
+from tkinter import colorchooser
+
+## me abre una ventana para cargar un archivo
+#filename = filedialog.askopenfilename()
+
+colorchooser.askcolor(initialcolor="#fff")
 
 window.mainloop()#para que se pueda ver la ventana se tiene que poner un main loop
 sys.exit(0)
