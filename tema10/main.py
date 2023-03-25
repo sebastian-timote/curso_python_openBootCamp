@@ -89,4 +89,4 @@ from tkinter import colorchooser
 colorchooser.askcolor(initialcolor="#fff")
 
 window.mainloop()#para que se pueda ver la ventana se tiene que poner un main loop
-sys.exit(0)
+#sys.exit(0)
