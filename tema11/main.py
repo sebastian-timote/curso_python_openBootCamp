@@ -2,7 +2,7 @@ import sqlite3
 import getpass
 
 def main():
-    crear_usuario(4, "vicky", "otraclave")
+    crear_usuario(5, "simon", "otraclavemas")
 def main2():
     username = input("Nombre de ususario: ")
     password = getpass.getpass("Contraseña: ")
@@ -21,14 +21,14 @@ def verifica_credenciales(username,password):
     print("data es:", type(data))
     cursor.close()
     conn.close()
-
+#con el isolation_level=None envia los datos directos ala db y no hay que commitearlos
 def crear_usuario(identificador,usuario,clave):
-    conn = sqlite3.connect('miaplicacion.db')
+    conn = sqlite3.connect('miaplicacion.db', isolation_level=None)
     cursor = conn.cursor()
     query = f"INSERT INTO users(id,username,password)  VALUES(?,?,?)"
     rows= cursor.execute(query, (identificador,usuario,clave))
     print(type(rows))
-    conn.commit()
+    #conn.commit()
     cursor.close()
     conn.close()
     
